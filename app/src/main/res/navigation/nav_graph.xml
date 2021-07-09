@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.sample.views.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment2"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment_B"
+            app:destination="@id/detailFragment_B" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.sample.views.fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail_b">
+        <argument
+            android:name="currentMovie"
+            app:argType="com.example.sample.views.model.Movie" />
+        <action
+            android:id="@+id/action_detailFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment_B"
+        android:name="com.example.sample.views.fragments.DetailFragment_B"
+        android:label="fragment_detail__b">
+        <action
+            android:id="@+id/action_detailFragment_B_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="currentMovie"
+            app:argType="com.example.sample.views.model.Movie" />
+    </fragment>
+</navigation>
